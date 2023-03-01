@@ -7,8 +7,10 @@ import {
   hotTea,
   etc,
 } from "@/components/melt/menu";
+import { useState } from "react";
 
 const Melt = () => {
+  const [drink, setDrink] = useState();
   return (
     <div>
       <h1>Melt</h1>
@@ -18,6 +20,12 @@ const Melt = () => {
           {espressoDrink.map((item) => (
             <div key={item.id}>
               <span>{item.menu}</span>
+              <span onClick={() => console.log({ ...item, hot: true })}>
+                🔥
+              </span>
+              <span onClick={() => console.log({ ...item, hot: false })}>
+                🧊
+              </span>
             </div>
           ))}
         </div>
@@ -26,6 +34,8 @@ const Melt = () => {
           {signitureLatte.map((item) => (
             <div key={item.id}>
               <span>{item.menu}</span>
+              <span>🔥</span>
+              <span>🧊</span>
             </div>
           ))}
         </div>
@@ -34,6 +44,7 @@ const Melt = () => {
           {tea.map((item) => (
             <div key={item.id}>
               <span>{item.menu}</span>
+              <span>🔥</span>
             </div>
           ))}
         </div>
@@ -42,6 +53,7 @@ const Melt = () => {
           {ade.map((item) => (
             <div key={item.id}>
               <span>{item.menu}</span>
+              <span>🧊</span>
             </div>
           ))}
         </div>
@@ -50,6 +62,8 @@ const Melt = () => {
           {beverages.map((item) => (
             <div key={item.id}>
               <span>{item.menu}</span>
+              <span>🔥</span>
+              <span>🧊</span>
             </div>
           ))}
         </div>
@@ -58,6 +72,7 @@ const Melt = () => {
           {hotTea.map((item) => (
             <div key={item.id}>
               <span>{item.menu}</span>
+              <span>🔥</span>
             </div>
           ))}
         </div>
@@ -66,6 +81,7 @@ const Melt = () => {
           {etc.map((item) => (
             <div key={item.id}>
               <span>{item.menu}</span>
+              <span>📦</span>
             </div>
           ))}
         </div>
